@@ -5,11 +5,14 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes = [
  {path: '', component:HomeComponent},
   { path: 'Games', component: GamesComponent },
-  { path: 'Login', component: UserComponent }
+  { path: 'Login', component: UserComponent },
+
 ];
 
 @NgModule({
@@ -18,9 +21,12 @@ const routes: Routes = [
     GamesComponent,
     HomeComponent,
     UserComponent
+  
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(routes)
+    BrowserModule, 
+    RouterModule.forRoot(routes), 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
